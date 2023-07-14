@@ -12,13 +12,13 @@
 
 int main(void)
 {
-	int x = 0;
+	char x = 'z';
 
-	while (x <= 9)
+	while (x >= 'a')
 	{
-		putchar(x + 48);
-		x++;
+		putchar(x);
+		x--;
 	}
-	putchar("\n");
+	putchar('\n');
 	return (0);
 }
