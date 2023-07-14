@@ -5,19 +5,23 @@
 /**
  *main - Entry point
  *
- *Description: alphabets z to a
+ *Description: base 16 lowercase
  *
  *Return: always 0 (Success)
 */
 
 int main(void)
 {
-	char x = 'z';
+	int x = 48;
 
-	while (x >= 'a')
+	while (x <= 102)
 	{
 		putchar(x);
-		x--;
+		if (x == 57)
+		{
+			x = 96;
+		}
+		x++;
 	}
 	putchar('\n');
 	return (0);
