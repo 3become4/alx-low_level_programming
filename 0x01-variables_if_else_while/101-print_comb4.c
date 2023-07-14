@@ -35,10 +35,11 @@ int main(void)
 						putchar(' ');
 					}
 				}
-				y++;
+				z++;
 			}
-			x++;
+			y++;
 		}
+		x++;
 	}
 	putchar('\n');
 	return (0);
