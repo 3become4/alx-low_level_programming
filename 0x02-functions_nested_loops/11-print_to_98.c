@@ -10,7 +10,7 @@
  *Return: all natural numbers from n to 98
 */
 
-int print_to_98(int n)
+void print_to_98(int n)
 {
 	int c;
 
