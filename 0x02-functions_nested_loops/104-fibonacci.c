@@ -1,4 +1,4 @@
-#include "main.h"
+#ilude "main.h"
 /**
  *main - Entry point
  *
@@ -11,35 +11,38 @@
 int main(void)
 {
 	int i;
-	unsigned long f1 = 0, f2 =1, s, f1h1, f1h2, f2h1, f2h2, h1, h2; 
-	
-	for (i = 0; i <= 92; i++)
+	unsigned long l1 = 0, r1 = 1, n3;
+	unsigned long l1_h1, l1_h2, r1_h1, r1_h2;
+	unsigned long h1, h2;
+
+	for (i = 0; i < 92; i++)
 	{
-		s = f1 + f2;
-		printf("%lu, ", s);
-		f1 = f2;
-		f2 = s;
+		n3 = l1 + r1;
+		printf("%lu, ", n3);
+		l1 = r1;
+		r1 = n3;
 	}
-	f1h1 = f1 / 10000000000;
-	f2h1 = f2 / 10000000000;
-	f1h2 = f1 % 10000000000;
-	f2h2 = f2 % 10000000000;
+	l1_h1 = l1 / 10000000000;
+	r1_h1 = r1 / 10000000000;
+	l1_h2 = l1 % 10000000000;
+	r1_h2 = r1 % 10000000000;
 	for (i = 93; i < 99; i++)
 	{
-		h1 = f1h1 + f2h1;
-		h2 = f1h2 + f2h2;
-		if (f1h2 + f2h2 > 9999999999)
+		h1 = l1_h1 + r1_h1;
+		h2 = l1_h2 + r1_h2;
+		if ((l1_h2 + r1_h2) > 9999999999)
 		{
-			h1 += 1;
-			h2 %= 10000000000;
+		h1 += 1;
+		h2 %= 10000000000;
 		}
 		printf("%lu%lu", h1, h2);
 		if (i != 98)
 			printf(", ");
-		f1h1 = f2h1;
-		f1h2 = f2h2;
-		f2h1 = h1;
-		f2h2 = h2;
+
+		l1_h1 = r1_h1;
+		l1_h2 = r1_h2;
+		r1_h1 = h1;
+		r1_h2 = h2;
 	}
 	printf("\n");
 	return (0);
