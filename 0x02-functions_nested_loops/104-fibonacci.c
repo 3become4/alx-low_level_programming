@@ -1,28 +1,4 @@
 #include "main.h"
-
-/**
- *nl - Entry point
- *
- *Description:  get len of num
- *
- * @x: a number
- *
- * Return: len of num
-*/
-
-int nl(int x)
-{
-	int l = 0;
-
-	if (!x)
-		return (1);
-	while (x)
-	{
-		x = x / 10;
-		l += 1;
-	}
-	return (l);
-}
 /**
  *main - Entry point
  *
@@ -34,33 +10,37 @@ int nl(int x)
 
 int main(void)
 {
-	int i, init;
-	long l = 1, r = 2, s, end = 100000000, l1 = 0, r1 = 0, s1 = 0;
-
-	for (i = 0; i <= 98; i++)
+	int i;
+	unsigned long f1 = 0, f2 =1, s, f1h1, f1h2, f2h1, f2h2, h1, h2; 
+	
+	for (i = 0; i <= 92; i++)
 	{
-		if (l1 > 0)
-			printf("%lu", l1);
-		init = nl(end) - 1 - nl(l);
-		while (l1 > 0 && init > 0)
+		s = f1 + f2;
+		printf("%lu, ", s);
+		f1 = f2;
+		f2 = s;
+	}
+	f1h1 = f1 / 10000000000;
+	f2h1 = f2 / 10000000000;
+	f1h2 = f1 % 10000000000;
+	f2f2 = f2 % 10000000000;
+	for (i = 93; i < 99; i++)
+	{
+		h1 = f1h1 + f2h1;
+		h2 = f1h2 + f2h2;
+		if (f1h2 + f2h2 > 9999999999)
 		{
-			printf("%d", 0);
-			init--;
+			h1 += 1;
+			h2 %= 10000000000;
 		}
-		printf("%lu", l);
-
-		s = (l + r) % end;
-		s1 = l1 + r1 + (l + r) / end;
-		l = r;
-		l1 = r1;
-		r = s;
-		r1 = s1;
-
+		printf("%lu%lu", h1, h2);
 		if (i != 98)
 			printf(", ");
-		else
-			printf("\n");
+		f1h1 = f2h1;
+		f1h2 = f2h2;
+		f2h1 = h1;
+		f2h2 = h2;
 	}
-
+	printf("\n");
 	return (0);
 }
