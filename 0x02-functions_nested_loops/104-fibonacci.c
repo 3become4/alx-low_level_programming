@@ -41,8 +41,6 @@ int main(void)
 	{
 		if (l1 > 0)
 			printf("%lu", l1);
-		x = floor(log10(abs(end))) + 1;
-		y = floor(log10(abs(l))) + 1;
 		init = nl(end) - 1 - nl(l);
 		while (l1 > 0 && init > 0)
 		{
