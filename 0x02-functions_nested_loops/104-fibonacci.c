@@ -1,5 +1,28 @@
 #include "main.h"
-#include <math.h>
+
+/**
+ *nl - Entry point
+ *
+ *Description:  get len of num
+ *
+ * @x: a number
+ *
+ * Return: len of num
+*/
+
+int nl(int x)
+{
+	int l = 0;
+
+	if (!x)
+		return (1);
+	while (x)
+	{
+		x = x / 10;
+		l += 1;
+	}
+	return (l);
+}
 /**
  *main - Entry point
  *
@@ -20,7 +43,7 @@ int main(void)
 			printf("%lu", l1);
 		x = floor(log10(abs(end))) + 1;
 		y = floor(log10(abs(l))) + 1;
-		init = x - 1 - y;
+		init = nl(end) - 1 - nl(l);
 		while (l1 > 0 && init > 0)
 		{
 			printf("%d", 0);
