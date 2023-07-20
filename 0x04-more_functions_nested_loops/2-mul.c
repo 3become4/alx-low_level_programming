@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *print_numbers - Entry point
+ *mul - Entry point
  *
  *Description: multiplies two integers.
  *
@@ -10,7 +10,7 @@
  * Return: result
 */
 
-void print_numbers(void)
+int mul(int a, int b);
 {
 	return (a * b);
 }
