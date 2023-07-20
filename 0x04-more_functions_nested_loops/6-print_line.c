@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *print_diagonal - Entry point
+ *print_line - Entry point
  *
  *Description: draws a straight line in the terminal.
  *
@@ -9,7 +9,7 @@
  * Return: result
 */
 
-void print_diagonal(int n)
+void print_line(int n)
 {
 	int i;
 
