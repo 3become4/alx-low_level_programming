@@ -2,17 +2,12 @@
 /**
  *mul - Entry point
  *
- *Description: multiplies two integers.
+ * Description: multiplies two integers.
  *
- * @a: an input of int
- * @b: an input of int
- *
- * Return: x
+ * Return: result
 */
 
 int mul(int a, int b)
 {
-	x = a * b;
-
-	return (x);
+	return (a * b);
 }
