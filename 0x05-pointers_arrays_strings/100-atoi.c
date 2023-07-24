@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _atoi -  prints n elements of an array
+* _atoi -  convert a string to an integer.
 *
 * @s: char pointer 1
 *
@@ -10,7 +10,7 @@
 
 int _atoi(char *s)
 {
-	int x = 0;
+	unsigned int x = 0;
 	int y = 1;
 
 	do {
