@@ -3,7 +3,7 @@
 /**
 * _strlen - length of a string.
 *
-* @a: string 1 pointer
+* @s: string 1 pointer
 *
 * Return: count
 */
