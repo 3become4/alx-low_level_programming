@@ -20,4 +20,5 @@ int main(void)
 		i += x;
 		putchar(x);
 	}
+	return (0);
 }
