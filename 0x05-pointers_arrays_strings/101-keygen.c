@@ -16,8 +16,8 @@ int main(void)
 
 	while (i <= 32767)
 	{
-		c = rand() % 128;
-		i += c;
-		putchar(c);
+		x = rand() % 128;
+		i += x;
+		putchar(x);
 	}
 }
