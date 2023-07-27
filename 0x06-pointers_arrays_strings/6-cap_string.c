@@ -11,7 +11,7 @@ char *cap_string(char *s)
 	int i = 0;
 	int l = 0;
 	int dd = 0;
-	char d[] = " \t\n,.!?\"(){}";
+	char d[] = " \t\n,;.!?\"(){}";
 
 	while (s[i] && s[i] != '\0')
 	{
@@ -20,11 +20,12 @@ char *cap_string(char *s)
 			if (s[i] == d[l])
 				dd = 1;
 		}
-		if (s[i] >= 97 && s[i] <= 122 && dd == 1)
+		if (s[i + 1] >= 97 && s[i + 1] <= 122 && dd == 1)
 		{
-			s[i] = s[i] - 32;
+			s[i + 1] = s[i + 1] - 32;
 			dd = 0;
-		}
+		}else
+			dd = 0;
 		i++;
 	}
 	return (s);
