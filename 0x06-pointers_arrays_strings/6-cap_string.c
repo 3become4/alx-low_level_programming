@@ -4,29 +4,23 @@
  *
  * @s: string input
  *
- * Return: string
+ * Return: sing
  */
 char *cap_string(char *s)
 {
 	int i = 0;
-	int l = 0;
-	int dd = 0;
-	char d[] = " \t\n,;.!?\"(){}";
 
-	while (s[i] && s[i] != '\0')
+	while (s[i])
 	{
-		for (l = 0; l < 12; l++)
-		{
-			if (s[i] == d[l])
-				dd = 1;
-		}
-		if (s[i + 1] >= 97 && s[i + 1] <= 122 && dd == 1)
-		{
-			s[i + 1] = s[i + 1] - 32;
-			dd = 0;
-		}
-		else
-			dd = 0;
+		if (!(s[i] >= 'a' && s[i] <= 'z'))
+			i++;
+		if (s[i - 1] == ' ' || s[i - 1] == '\t' || s[i - 1] == '\n'
+			|| s[i - 1] == ',' || s[i - 1] == ';' || s[i - 1] == '.'
+			|| s[i - 1] == '!' || s[i - 1] == '?' || s[i - 1] == '"'
+			|| s[i - 1] == '(' || s[i - 1] == ')' || s[i - 1] == '{'
+			|| s[i - 1] == '}' || i == 0)
+			s[i] -= 32;
+
 		i++;
 	}
 	return (s);
