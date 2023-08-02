@@ -9,7 +9,7 @@
  */
 int funx(int x, int y)
 {
-	if (x == 2)
+	if (x == 2 || x == y)
 		return (1);
 	else if (x % y == 0 || x <= 1)
 		return (0);
