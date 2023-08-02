@@ -10,7 +10,7 @@ int stlen(char *l)
 {
 	if (*l == '\0')
 		return (0);
-	return (1 + _strlen_recursion(l + 1));
+	return (1 + stlen(l + 1));
 }
 /**
  * checker - checks if the string is right
@@ -27,7 +27,7 @@ int checker(char *x, int y, int l)
 		return (0);
 	if (y >= l)
 		return (1);
-	return (check_pal(x, y + 1, l - 1));
+	return (checker(x, y + 1, l - 1));
 }
 
 /**
