@@ -15,6 +15,7 @@ int funx(int x, int y)
 		return (funx(x, y + 1));
 	else
 		return (-1);
+}
 /**
  * _sqrt_recursion - natural square root of a number.
  *
