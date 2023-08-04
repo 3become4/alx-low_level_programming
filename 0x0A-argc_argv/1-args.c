@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main -  prints the number of arguments passed 
+ * main -  prints the number of arguments passed
  *
  * @argc: int
  * @argv: const arg
@@ -10,6 +10,7 @@
  */
 int main(int argc, char const *argv[])
 {
-	printf("%d\n", (argc - 1));
+	(void) argv;
+	printf("%d\n", argc - 1);
 	return (0);
 }
