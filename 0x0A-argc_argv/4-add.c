@@ -21,8 +21,8 @@ int main(int argc, char const *argv[])
 		{
 			if (*x < '0' || *x > '9')
 				return (printf("Error\n"), 1);
-			sum += atoi(argv[i]);
 		}
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
