@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
 	{
 		for (x = argv[i]; *x; x++)
 		{
-			if (*x < '0' || *c > '9')
+			if (*x < '0' || *x > '9')
 				return (printf("Error\n"), 1);
 			sum += atoi(argv[i]);
 		}
