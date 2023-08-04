@@ -7,9 +7,9 @@
  * @argv: const arg
  *
  *
- * Return: 0 if success 1 if fail
+ * Return: 0 
  */
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 	int sum = 0;
 	int i;
