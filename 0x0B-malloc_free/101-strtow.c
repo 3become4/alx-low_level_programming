@@ -46,7 +46,7 @@ char **strtow(char *str)
 	if (a == NULL)
 		return (NULL);
 	a[z - 1] = NULL;
-	i = 0
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
