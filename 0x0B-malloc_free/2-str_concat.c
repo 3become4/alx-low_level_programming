@@ -13,9 +13,15 @@ char *str_concat(char *s1, char *s2)
 	char *x;
 
 	if (s1 == NULL)
+	{
 		s1 = '\0';
+		s1s++;
+	}
 	if (s2 == NULL)
+	{
 		s2 = '\0';
+		s2s++;
+	}
 
 	while (s1[s1s] != '\0')
 		s1s++;
@@ -26,7 +32,7 @@ char *str_concat(char *s1, char *s2)
 	if (x == 0)
 		return (0);
 
-	for (i = 0; i <= (s1s + s2s); i++)
+	for (i = 0; i <= s1s + s2s; i++)
 	{
 		if (i < s1s)
 			x[i] = s1[i];
