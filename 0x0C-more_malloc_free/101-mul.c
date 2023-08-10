@@ -19,7 +19,6 @@ int isdig(int x)
  *
  * Return: len of st
  */
-
 int stlen(char *x)
 {
 	int i = 0;
@@ -37,8 +36,6 @@ int stlen(char *x)
  *
  * Return: prod of str
  */
-
-
 char *strmult(char *s1, char *s2)
 {
 	char *x;
@@ -81,8 +78,6 @@ char *strmult(char *s1, char *s2)
 	}
 	return (x);
 }
-
-
 
 /**
  * main - reallocates a memory block using malloc and free
