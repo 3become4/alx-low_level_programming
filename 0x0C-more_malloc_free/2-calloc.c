@@ -1,6 +1,31 @@
 #include "main.h"
 
 /**
+ * fillmem - allocates memory for an array.
+ *
+ *
+ * @y: char
+ * @x: char
+ * @z: int unsigned
+ *
+ *
+ * Return: pointer to x
+ */
+char *fillmem(char *x, char y, unsigned int z)
+{
+	unsigned int i;
+
+	for (i = 0; i < z; i++)
+	{
+		x[i] = y;
+	}
+
+	return (x);
+}
+
+
+
+/**
  * _calloc - allocates memory for an array.
  *
  *
@@ -12,19 +37,18 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *x;
-	unsigned int y;
+	char *x;
 
-	if (size == 0 || nmemb == 0)
-		return (NULL);
-	x = malloc(sizeof(int) * nmemb);
-
-	if (x == 0)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	y = sizeof(int) * nmemb;
+	x = malloc(size * nmemb);
 
-	while (y--)
-		*x++ = 0;
+	if (x == NULL)
+		return (NULL);
+
+	fillmem(x, 0, nmemb * size);
+
 	return (x);
+
 }
