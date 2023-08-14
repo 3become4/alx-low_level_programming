@@ -34,12 +34,23 @@ int stl(char *s)
  */
 char *stcp(char *d, char *s)
 {
-	int i;
+	int l, i;
 
-	for (i = 0; s[i]; i++)
+	l = 0;
+
+	while (s[l] != '\0')
+	{
+		l++;
+	}
+
+	for (i = 0; i < l; i++)
+	{
 		d[i] = s[i];
+	}
 	d[i] = '\0';
+
 	return (d);
+
 }
 
 
