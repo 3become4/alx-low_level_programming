@@ -1,6 +1,27 @@
 #include "dog.h"
 #include <stdio.h>
 
+/**
+ * stl - the length of a string
+ *
+ * @s: string
+ *
+ * Return: the length of a string
+ */
+int stl(char *s)
+{
+	int i;
+
+	i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
+}
+
 
 
 /**
@@ -37,36 +58,31 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *dog;
 	int nl, ol;
 
-	nl = ol = 0;
+	nl = stl(name);
+	ol = stl(owner);
 
-	if (!name || age < 0 || !owner)
-		return (NULL);
-
-	while (*name++)
-		nl++;
-	while (*owner++)
-		ol++;
-
-	dog = (dog_t *) malloc(sizeof(dog_t));
+	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
-	dog->name = malloc(sizeof(char) * (nl + 1))
-	if ((*dog).name == NULL)
-	{
-		free(dog);
-		return (NULL);
-	}
-	dog->owner = malloc(sizeof(char) * (ol + 1))
-	if ((*dog).owner == NULL)
-	{
-		free(dog->name);
-		free(dog);
-		return (NULL);
-	}
 
-	dog->name = stcp(dog->name, name);
+	dog->name = malloc(sizeof(char) * (nl + 1));
+	if (dog->name == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
+	dog->owner = malloc(sizeof(char) * (ol + 1));
+	if (dog->owner == NULL)
+	{
+		free(dog);
+		free(dog->name);
+		return (NULL);
+	}
+	stcp(dog->name, name);
+	stcp(dog->owner, owner);
 	dog->age = age;
-	dog->owner = stcp(dog->owner, owner);
 
 	return (dog);
 }
+
+
