@@ -7,7 +7,7 @@
  * @age: age
  * @owner: owner
  *
- * discription: a dog struct file.
+ * Description: a dog struct file.
  */
 
 struct dog
@@ -15,7 +15,7 @@ struct dog
 	char *name;
 	float *age;
 	char *owner;
-}
+};
 
 #endif
 
