@@ -1,7 +1,7 @@
 #include "function_pointers.h"
 
 /**
- * print_name - function that prints a name.
+ * array_iterator -  parameter on each element of an array.
  *
  * @array: int array
  * @size: size
