@@ -1,16 +1,16 @@
 #include "3-calc.h"
 
 /**
- * main - Prints the result operations.
- *
- * @argc: num of arg.
- * @argv: pointer array
- *
- * Return: 0
- */
- int main(int argc, char **argv)
- {
- 	int x, y;
+* main - Prints the result operations.
+*
+* @argc: num of arg.
+* @argv: pointer array
+*
+* Return: 0
+*/
+int main(int argc, char **argv)
+{
+	int x, y;
 	int (*op_func)(int, int);
 
 	if (argc != 4)
@@ -36,4 +36,5 @@
 	}
 	printf("%d\n", op_func(x, y));
 	return (0);
- }
+}
+

@@ -1,7 +1,7 @@
 #include "3-calc.h"
 
 /**
- * op_add -  add 2 integers.
+ * op_add -  add two integers.
  *
  * @a: int number
  * @b: int number
@@ -15,7 +15,7 @@ int op_add(int a, int b)
 }
 
 /**
- * op_sub -  subtract 2 integers.
+ * op_sub -  subtract two integers.
  *
  * @a: int number
  * @b: int number
@@ -29,7 +29,7 @@ int op_sub(int a, int b)
 }
 
 /**
- * op_mul -  multiply 2 integers.
+ * op_mul -  multiply two integers.
  *
  * @a: int number
  * @b: int number
@@ -43,7 +43,7 @@ int op_mul(int a, int b)
 }
 
 /**
- * op_div -  devide 2 integers.
+ * op_div -  devide two integers.
  *
  * @a: int number
  * @b: int number
@@ -57,7 +57,7 @@ int op_div(int a, int b)
 }
 
 /**
- * op_mod -  devide 2 integers.
+ * op_mod -  mod two integers.
  *
  * @a: int number
  * @b: int number
