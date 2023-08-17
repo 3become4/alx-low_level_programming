@@ -1,3 +1,4 @@
+#include "function_pointers.h"
 #include "3-calc.h"
 
 /**
@@ -8,10 +9,10 @@
 *
 * Return: 0
 */
-int main(int argc, char **argv)
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int x, y;
-	int (*op_func)(int, int);
+	char *op;
 
 	if (argc != 4)
 	{
@@ -20,21 +21,22 @@ int main(int argc, char **argv)
 	}
 
 	x = atoi(argv[1]);
-	op_func = get_op_func(argv[2]);
+	op = argv[2];
 	y = atoi(argv[3]);
 
-	if (!op_func)
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if (!b && (argv[2][0] == "/" || argv[2][0] == "%"))
+	if ((*op == '/' && y == 0) || (*op == '%' && y == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	printf("%d\n", op_func(x, y));
+
+	printf("%d\n", get_op_func(op)(x, y));
+
 	return (0);
 }
-
