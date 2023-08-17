@@ -11,7 +11,7 @@
  int main(int argc, char **argv)
  {
  	int x, y;
-	char *op;
+	int (*op_func)(int, int);
 
 	if (argc != 4)
 	{
@@ -20,20 +20,20 @@
 	}
 
 	x = atoi(argv[1]);
-	op = argv[2];
+	op_func = get_op_func(argv[2]);
 	y = atoi(argv[3]);
 
-	if (get_op_func(op) == NULL || op[1] != '\0')
+	if (!op_func)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*op == '/' && y == 0) || (*op == '%' && y == 0))
+	if (!b && (argv[2][0] == "/" || argv[2][0] == "%"))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	printf("%d\n", get_op_func(op)(x, y));
+	printf("%d\n", op_func(x, y));
 	return (0);
  }
