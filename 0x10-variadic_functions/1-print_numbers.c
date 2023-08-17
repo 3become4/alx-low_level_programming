@@ -3,7 +3,7 @@
 /**
 * print_numbers -  prints numbers, followed by a new line.
 *
-* @separatorn: seperator.
+* @separator: seperator.
 * @n: count of nums
 * @...: perms to print
 *
