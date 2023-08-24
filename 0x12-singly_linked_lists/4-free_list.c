@@ -19,7 +19,7 @@ void free_list(list_t *head)
 		y = x->next;
 		free(x->str);
 		free(x);
-		x= next_node;
+		x= y;
 	}
 }
 
