@@ -1,13 +1,13 @@
 #include "lists.h"
 
 /**
- * strl - str len
+ * str - str len
  *
  * @str: pointer
  *
  * Return: len
  */
- int strl(char *x)
+ int stl(char *x)
  {
  	int i = 0;
 
@@ -31,9 +31,13 @@ size_t print_list(const list_t *h)
 
 	while (h)
 	{
-		printf("[%d] %s\n", strl(h->str), h->str ? h->str : "(nil)");
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", stl(h->str), h->str);
 		h = h->next;
 		i++;
+
 	}
 	return (i);
 }
