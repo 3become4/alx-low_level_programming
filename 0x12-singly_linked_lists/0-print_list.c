@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * str - str len
@@ -7,16 +8,17 @@
  *
  * Return: len
  */
- int stl(char *x)
- {
- 	int i = 0;
+int stl(char *x)
+{
+	int i = 0;
 
- 	if (!x)
- 		return (0);
- 	while(*x++)
- 		i++
- 	return (i);
- }
+	if (!x)
+		return (0);
+
+	while(*x++)
+		i++
+	return (i);
+}
 
 /**
  * print_list - all the elements of a list_t list
