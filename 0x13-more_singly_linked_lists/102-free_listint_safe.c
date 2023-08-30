@@ -1,15 +1,15 @@
 #include "lists.h"
 
 /**
- * free_listint_safe- function that frees a listint_t list.
+ * free_listint_safe-  function that frees a listint_t list.
  *
  * @h: pointer to first
  *
- * Return: free elements
+ * Return: num of free
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t i = 0;
+	size_t l = 0;
 	int x;
 	listint_t *y;
 
@@ -24,19 +24,19 @@ size_t free_listint_safe(listint_t **h)
 			y = (*h)->next;
 			free(*h);
 			*h = y;
-			i++;
+			l++;
 		}
 		else
 		{
 			free(*h);
 			*h = NULL;
-			i++;
+			l++;
 			break;
 		}
 	}
 
 	*h = NULL;
 
-	return (i);
+	return (l);
 }
 
