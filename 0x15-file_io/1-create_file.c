@@ -6,27 +6,29 @@
  * @filename: filename
  * @text_content:text content in file
  *
- * Return: number of letters it could read and print
+ * Return: 1 on success, -1
  */
 int create_file(const char *filename, char *text_content)
 {
-	int x, l;
-	ssize_t b = 0;
+	int fd, w, l = 0;
 
-	for (l = 0; text_content[l])
-		l++
+	if (filename == NULL)
+		return (-1);
 
-	if (!filename)
+	if (text_content != NULL)
+	{
+		for (l = 0; text_content[l];)
+			l++;
+	}
+
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(fd, text_content, l);
+
+	if (fd == -1 || w == -1)
 		return (-1);
-	x = open(filename, O_WRONLY | O_CREAT | O_RDWR | O_TRUNC | S_IWUSR);
-	if (x == -1)
-		return (-1);
-	if (l)
-		b = write(x, text_content, l);
-	close(x);
-	if (b == l)
-		return (1);
-	else
-		return (-1)
+
+	close(fd);
+
+	return (1);
 }
 
